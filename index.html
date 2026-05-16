@@ -113,8 +113,24 @@
     .hero-overlay span { color: var(--muted); }
     .section { padding: 78px 0; }
     .section-head { display:flex; justify-content:space-between; align-items:end; gap: 24px; margin-bottom: 24px; }
-    .section-head h2 { font-size: clamp(2.1rem, 4vw, 3.5rem); max-width: 13ch; }
-    .section-head p { margin: 0; color: var(--muted); max-width: 58ch; }
+    .section-head h2 {
+      font-size: clamp(1.85rem, 3.1vw, 2.75rem);
+      line-height: 1.04;
+      max-width: 11ch;
+      text-wrap: balance;
+    }
+    .section-head p { margin: 0; color: var(--muted); max-width: 46ch; }
+
+    .feature h3 {
+      font-size: 1.35rem;
+      line-height: 1.1;
+      text-wrap: balance;
+    }
+    .service h3 {
+      font-size: 1.28rem;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
     .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .grid-2 { display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
     .card {
@@ -131,8 +147,21 @@
     .split { display:grid; grid-template-columns: .98fr 1.02fr; gap: 16px; align-items: stretch; }
     .story { padding: 24px; }
     .label { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
-    .story h2 { margin-top: 10px; }
+    .story h2 { margin-top: 10px; font-size: clamp(1.7rem, 2.8vw, 2.35rem); line-height: 1.05; }
     .story p { margin: 14px 0 0; color: var(--muted); font-size: 1.02rem; }
+    .quote-side h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.04; max-width: 10.5ch; }
+    .quote-side p { color: var(--muted); margin-top: 14px; font-size: 1rem; }
+    .contact-card h2 { font-size: clamp(1.7rem, 2.9vw, 2.4rem); line-height: 1.05; }
+    .service .label, .feature .label { display:inline-block; margin-bottom: 6px; }
+    .service p, .feature p { font-size: .98rem; line-height: 1.55; }
+    .service { align-content: start; }
+    .service .top { min-height: 124px; }
+    .service-grid { align-items: stretch; }
+    .grid-3, .grid-2 { align-items: stretch; }
+    .hero { padding: 44px 0 22px; }
+    .section { padding: 66px 0; }
+    .timeline .step h3 { font-size: 1.42rem; }
+    .faq-item button { font-size: 1rem; line-height: 1.25; }
     .photo-card {
       position:relative; overflow:hidden; min-height: 430px; border-radius: var(--radius-xl);
       border: 1px solid rgba(23,19,19,.08); box-shadow: var(--shadow-lg);
