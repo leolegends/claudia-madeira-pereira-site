@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dra. Cláudia Madeira Pereira — Psicóloga e Psicoterapeuta. Consultas online, psicoterapia cognitivo-comportamental, apoio parental, gravidez, pós-parto e desenvolvimento infantil." />
+  <title>Dra. Cláudia Madeira Pereira | Psicologia e Psicoterapia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --surface: rgba(255,255,255,.84);
+      --surface-strong: #ffffff;
+      --text: #171313;
+      --muted: #615a55;
+      --line: rgba(23,19,19,.08);
+      --accent: #7c5c52;
+      --accent-2: #4f6a74;
+      --accent-3: #8b8d69;
+      --shadow: 0 18px 50px rgba(30, 20, 20, .08);
+      --shadow-lg: 0 30px 90px rgba(30, 20, 20, .12);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --max: 1220px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,92,82,.10), transparent 28%),
+        radial-gradient(circle at top right, rgba(79,106,116,.10), transparent 24%),
+        linear-gradient(180deg, #fbf9f6 0%, #f2ede6 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(251,249,246,.75);
+      border-bottom: 1px solid rgba(23,19,19,.06);
+    }
+    .nav {
+      min-height: 78px; display:flex; align-items:center; justify-content:space-between; gap: 16px;
+    }
+    .brand { display:flex; align-items:center; gap: 12px; font-weight: 800; letter-spacing: -.03em; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 16px;
+      display:grid; place-items:center; color:#fff; background: linear-gradient(135deg, var(--accent), #a57a6e);
+      box-shadow: 0 14px 28px rgba(124,92,82,.22);
+    }
+    .nav-links { display:flex; gap: 8px; flex-wrap: wrap; }
+    .nav-links a {
+      padding: 10px 14px; border-radius: 999px; color: var(--muted); font-weight: 700;
+    }
+    .nav-links a:hover { background: rgba(124,92,82,.08); color: var(--accent); }
+    .nav-cta { display:flex; gap: 10px; }
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center; gap: 10px;
+      min-height: 48px; padding: 0 18px; border-radius: 999px; border: 1px solid transparent;
+      font-weight: 800; transition: .2s ease; white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), #a57a6e); color:#fff; box-shadow: 0 16px 34px rgba(124,92,82,.22); }
+    .btn-secondary { background:#fff; border-color: rgba(23,19,19,.10); box-shadow: 0 10px 24px rgba(30,20,20,.05); }
+    .hero { padding: 52px 0 28px; }
+    .hero-grid { display:grid; grid-template-columns: 1.02fr .98fr; gap: 24px; align-items:center; }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:10px; padding: 9px 13px; border-radius: 999px;
+      background: rgba(124,92,82,.08); color: var(--accent); font-weight: 800; font-size: .92rem;
+    }
+    .dot { width:8px; height:8px; border-radius:999px; background: var(--accent); box-shadow: 0 0 0 6px rgba(124,92,82,.10); }
+    h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; letter-spacing: -.03em; line-height: .95; margin: 0; }
+    h1 { font-size: clamp(3.2rem, 6vw, 5.9rem); max-width: 11ch; }
+    .lead { margin: 18px 0 0; color: var(--muted); font-size: clamp(1.05rem, 1.6vw, 1.22rem); max-width: 60ch; }
+    .hero-actions { display:flex; gap: 12px; flex-wrap:wrap; margin-top: 28px; }
+    .hero-meta { display:flex; gap: 10px; flex-wrap:wrap; margin-top: 18px; }
+    .pill {
+      padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,.84);
+      border: 1px solid rgba(23,19,19,.08); box-shadow: 0 10px 24px rgba(30,20,20,.05);
+      font-weight: 700; color: #4e463f;
+    }
+    .hero-card {
+      position:relative; overflow:hidden; min-height: 620px;
+      border-radius: var(--radius-xl); border: 1px solid rgba(23,19,19,.08);
+      box-shadow: var(--shadow-lg);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(124,92,82,.10), transparent 28%),
+        radial-gradient(circle at 80% 30%, rgba(79,106,116,.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.94), rgba(245,239,232,.96));
+    }
+    .hero-card img { width:100%; height:100%; object-fit: cover; object-position: center top; }
+    .hero-overlay {
+      position:absolute; left: 18px; right: 18px; bottom: 18px;
+      background: rgba(255,255,255,.90); backdrop-filter: blur(14px);
+      border: 1px solid rgba(23,19,19,.08); border-radius: 22px; padding: 16px;
+      display:flex; gap: 12px; align-items:center; box-shadow: 0 18px 40px rgba(30,20,20,.12);
+    }
+    .hero-badge {
+      width: 52px; height: 52px; border-radius: 18px; flex:none;
+      display:grid; place-items:center; color:#fff; background: linear-gradient(135deg, var(--accent-2), #688491);
+      font-weight: 800;
+    }
+    .hero-overlay strong { display:block; margin-bottom: 2px; }
+    .hero-overlay span { color: var(--muted); }
+    .section { padding: 78px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap: 24px; margin-bottom: 24px; }
+    .section-head h2 { font-size: clamp(2.1rem, 4vw, 3.5rem); max-width: 13ch; }
+    .section-head p { margin: 0; color: var(--muted); max-width: 58ch; }
+    .grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-2 { display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .card {
+      background: var(--surface); border: 1px solid rgba(23,19,19,.08); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow); backdrop-filter: blur(14px);
+    }
+    .feature { padding: 22px; }
+    .feature .icon {
+      width:48px; height:48px; border-radius:16px; display:grid; place-items:center; margin-bottom:14px;
+      background: rgba(124,92,82,.10); color: var(--accent); font-weight: 800;
+    }
+    .feature h3 { font-size: 1.58rem; margin-bottom: 10px; }
+    .feature p { margin:0; color: var(--muted); }
+    .split { display:grid; grid-template-columns: .98fr 1.02fr; gap: 16px; align-items: stretch; }
+    .story { padding: 24px; }
+    .label { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; }
+    .story h2 { margin-top: 10px; }
+    .story p { margin: 14px 0 0; color: var(--muted); font-size: 1.02rem; }
+    .photo-card {
+      position:relative; overflow:hidden; min-height: 430px; border-radius: var(--radius-xl);
+      border: 1px solid rgba(23,19,19,.08); box-shadow: var(--shadow-lg);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(124,92,82,.10), transparent 28%),
+        radial-gradient(circle at 80% 30%, rgba(79,106,116,.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,239,230,.95));
+    }
+    .photo-card::before,
+    .photo-card::after { content:''; position:absolute; border-radius:50%; pointer-events:none; opacity:.9; }
+    .photo-card::before { width: 220px; height: 220px; right:-70px; bottom:-60px; background: radial-gradient(circle, rgba(139,141,105,.22), transparent 60%); animation: drift 11s ease-in-out infinite; }
+    .photo-card::after { width: 140px; height: 140px; left:-35px; top:-35px; background: radial-gradient(circle, rgba(124,92,82,.18), transparent 62%); animation: drift 9s ease-in-out infinite reverse; }
+    .floating {
+      position:absolute; left: 18px; bottom: 18px; max-width: 360px; background: rgba(255,255,255,.9);
+      backdrop-filter: blur(14px); border: 1px solid rgba(23,19,19,.08); border-radius: 22px; padding: 16px;
+    }
+    .floating b { display:block; margin-bottom: 4px; }
+    .floating span { color: var(--muted); }
+    .guide-panel {
+      position:absolute; inset: 18px 18px auto auto; width: min(290px, calc(100% - 36px));
+      background: rgba(255,255,255,.88); backdrop-filter: blur(12px); border: 1px solid rgba(23,19,19,.08);
+      border-radius: 22px; padding: 16px; box-shadow: 0 18px 40px rgba(30,20,20,.10);
+    }
+    .guide-panel h3 { font-size: 1.2rem; margin-bottom: 10px; }
+    .guide-list { display:grid; gap:10px; margin:0; padding:0; list-style:none; }
+    .guide-list li { display:flex; gap:10px; align-items:flex-start; color: var(--muted); }
+    .guide-dot { width: 10px; height: 10px; border-radius:999px; margin-top:6px; flex:none; background: linear-gradient(135deg, var(--accent), var(--accent-3)); box-shadow: 0 0 0 6px rgba(124,92,82,.08); }
+    .service-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service { padding: 20px; display:grid; gap: 14px; }
+    .service .top { display:flex; gap: 14px; align-items:center; }
+    .service img {
+      width: 108px; height: 108px; object-fit: cover; border-radius: 22px; border: 1px solid rgba(23,19,19,.08);
+    }
+    .service h3 { font-size: 1.5rem; }
+    .service p { margin:0; color: var(--muted); }
+    .service .link { display:inline-flex; margin-top: 8px; font-weight: 800; color: var(--accent); }
+    .quote-grid { display:grid; grid-template-columns: .95fr 1.05fr; gap: 16px; }
+    .quote-side { padding: 24px; }
+    .quote-side h2 { font-size: clamp(2rem, 3.9vw, 3.2rem); max-width: 12ch; margin-top:10px; }
+    .quote-side p { color: var(--muted); margin-top: 14px; }
+    .quote-photo {
+      position:relative; min-height: 430px; border-radius: var(--radius-xl); overflow:hidden;
+      border: 1px solid rgba(23,19,19,.08); box-shadow: var(--shadow-lg);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(124,92,82,.10), transparent 28%),
+        radial-gradient(circle at 80% 30%, rgba(79,106,116,.10), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(246,239,230,.95));
+    }
+    .quote-badge {
+      position:absolute; top: 18px; left: 18px; padding: 10px 14px; border-radius: 999px;
+      background: rgba(255,255,255,.9); border:1px solid rgba(23,19,19,.08); color: var(--accent); font-weight:800;
+    }
+    .timeline { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .step { padding: 22px; }
+    .step b { color: var(--accent); display:inline-block; margin-bottom: 10px; }
+    .step h3 { font-size: 1.7rem; margin-bottom: 10px; }
+    .step p { margin: 0; color: var(--muted); }
+    .faq { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .faq-item { overflow:hidden; }
+    .faq-item button {
+      all: unset; cursor:pointer; width:100%; box-sizing:border-box;
+      display:flex; justify-content:space-between; gap:16px; align-items:center; padding:18px 20px; font-weight: 800;
+    }
+    .faq-item .answer { display:none; padding: 0 20px 18px; color: var(--muted); }
+    .faq-item.open .answer { display:block; }
+    .faq-item .chev { transition: transform .2s ease; }
+    .faq-item.open .chev { transform: rotate(180deg); }
+    .contact { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-card { padding: 24px; }
+    .socials { display:flex; flex-wrap:wrap; gap: 12px; margin-top: 16px; }
+    .socials a { display:inline-flex; align-items:center; gap:10px; padding:12px 14px; border-radius: 999px; background:#fff; border:1px solid rgba(23,19,19,.08); font-weight:800; }
+    .footer { padding: 24px 0 40px; color: var(--muted); }
+    .footer-inner { display:flex; justify-content:space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid rgba(23,19,19,.08); padding-top: 18px; }
+    .sticky-cta {
+      position: fixed; right: 18px; bottom: 18px; z-index: 40;
+      display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), #a57a6e); color:#fff; font-weight:800;
+      box-shadow: var(--shadow-lg);
+    }
+    .animate, .card, .btn, .pill, .hero-card, .photo-card, .quote-photo { animation: rise .7s ease both; }
+    .hero-card { animation-delay:.05s; }
+    .card:nth-of-type(2n) { animation-delay:.06s; }
+    .card:nth-of-type(3n) { animation-delay:.12s; }
+    .guide-panel { animation-delay:.1s; }
+    .floating { animation-delay:.16s; }
+    @keyframes rise { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform: translateY(0); } }
+    @keyframes drift { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(0,-12px,0) scale(1.05); } }
+    .mobile-toggle { display:none; }
+
+    @media (max-width: 1100px) {
+      .hero-grid, .split, .quote-grid, .contact, .grid-3, .grid-2, .service-grid, .timeline, .faq { grid-template-columns: 1fr; }
+      .service .top { align-items:flex-start; }
+      .service img { width:100%; height: 220px; }
+    }
+    @media (max-width: 760px) {
+      .nav-links, .nav-cta { display:none; }
+      .mobile-toggle { display:inline-flex; }
+      .section { padding: 58px 0; }
+      h1 { max-width:none; }
+      .hero-card { min-height: 500px; }
+      .guide-panel { position: static; width: auto; margin: 16px; }
+      .floating { position: static; margin: 16px; }
+      .quote-photo { min-height: 360px; }
+      .sticky-cta { right: 14px; bottom: 14px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Dra. Cláudia Madeira Pereira - início">
+        <span class="brand-mark">CP</span>
+        <span>Dra. Cláudia Madeira Pereira</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#terapias">Terapias</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-secondary" href="#contactos">Contactos</a>
+        <a class="btn btn-primary" href="https://www.claudiamadeirapereira.com/contactos/" target="_blank" rel="noreferrer">Agendar consulta</a>
+      </div>
+      <button class="btn btn-secondary mobile-toggle" type="button" id="mobileMenuBtn">Agendar</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>Psicologia clínica e psicoterapias cognitivo-comportamentais</div>
+          <h1>Ajuda profissional para viver com mais serenidade, equilíbrio e clareza.</h1>
+          <p class="lead">
+            Consultas online de psicologia clínica e psicoterapia, com uma abordagem humana, objetiva e focada em desenvolvimento pessoal,
+            bem-estar emocional e mudanças sustentáveis.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.claudiamadeirapereira.com/contactos/" target="_blank" rel="noreferrer">Marcar consulta</a>
+            <a class="btn btn-secondary" href="#servicos">Ver serviços</a>
+          </div>
+          <div class="hero-meta">
+            <span class="pill">Consultas online</span>
+            <span class="pill">Psicoterapia</span>
+            <span class="pill">Desenvolvimento pessoal</span>
+            <span class="pill">Terapias 3G</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="https://www.claudiamadeirapereira.com/wp-content/uploads/2021/08/Psicoterapeuta-Claudia-Madeira-Pereira-11-optimized.jpg" alt="Dra. Cláudia Madeira Pereira" loading="eager" />
+          <div class="hero-overlay">
+            <div class="hero-badge">CP</div>
+            <div>
+              <strong>Dra. Cláudia Madeira Pereira</strong>
+              <span>Psicóloga e Psicoterapeuta • consultas online</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container split">
+        <article class="card story">
+          <div class="label">Sobre mim…</div>
+          <h2>Um trabalho focado em apoio, bem-estar e felicidade.</h2>
+          <p>
+            Viva! Sou Psicóloga e Psicoterapeuta, e tenho um grande amor à minha profissão e ao meu trabalho, adoro apoiar pessoas e contribuir para o seu bem-estar e a sua felicidade.
+          </p>
+          <p>
+            O meu objetivo é dar a melhor ajuda para a sua saúde mental, com escuta, método e um plano claro para que o processo terapêutico seja mais leve e útil no seu dia a dia.
+          </p>
+          <p>
+            A atuação inclui psicologia clínica, psicoterapia cognitivo-comportamental e abordagens modernas como mindfulness, compaixão e aceitação.
+          </p>
+        </article>
+
+        <div class="photo-card">
+          <div class="guide-panel">
+            <h3>O que é priorizado no acompanhamento</h3>
+            <ul class="guide-list">
+              <li><span class="guide-dot"></span><span>Redução de stress, ansiedade e sobrecarga emocional.</span></li>
+              <li><span class="guide-dot"></span><span>Objetivos práticos e evolução visível ao longo das sessões.</span></li>
+              <li><span class="guide-dot"></span><span>Estratégias adaptadas à sua fase de vida e contexto familiar.</span></li>
+            </ul>
+          </div>
+          <div class="floating">
+            <b>Sinta-se Bem, Sereno & Feliz!</b>
+            <span>Uma experiência mais objetiva, humana e acolhedora para quem procura ajuda psicológica.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Os meus Serviços</div>
+            <h2>Atendimentos e frentes de trabalho.</h2>
+          </div>
+          <p>Reorganizados de forma mais clara para ajudar a pessoa certa a encontrar o serviço certo com menos fricção.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="card service">
+            <div class="top">
+              <img src="https://www.claudiamadeirapereira.com/wp-content/uploads/2021/12/Psicoterapia-a-Distancia_Servicos-Dra-Claudia-scaled-optimized.jpg" alt="Psicoterapia à distância" loading="lazy" />
+              <div>
+                <div class="label">01</div>
+                <h3>Psicoterapia à distância</h3>
+              </div>
+            </div>
+            <p>Consultas online para conveniência, continuidade e acesso mais fácil ao acompanhamento psicológico.</p>
+          </article>
+
+          <article class="card service">
+            <div class="top">
+              <img src="https://www.claudiamadeirapereira.com/wp-content/uploads/2021/12/Psicoterapia-para-Adultos_Servicos-Dra-Claudia-scaled-optimized.jpg" alt="Psicoterapia para adultos" loading="lazy" />
+              <div>
+                <div class="label">02</div>
+                <h3>Psicoterapia para adultos</h3>
+              </div>
+            </div>
+            <p>Apoio para desafios emocionais, stress, relações, autoconceito e crescimento pessoal.</p>
+          </article>
+
+          <article class="card service">
+            <div class="top">
+              <img src="https://www.claudiamadeirapereira.com/wp-content/uploads/2021/12/Psicologia-na-Gravidez_Servicos-Dra-Claudia-scaled-optimized.jpg" alt="Psicologia na gravidez" loading="lazy" />
+              <div>
+                <div class="label">03</div>
+                <h3>Psicologia na gravidez</h3>
+              </div>
+            </div>
+            <p>Acompanhamento emocional numa fase de grande transformação física, mental e familiar.</p>
+          </article>
+        </div>
+
+        <div class="service-grid" style="margin-top:16px;">
+          <article class="card service">
+            <div class="top">
+              <img src="https://www.claudiamadeirapereira.com/wp-content/uploads/2021/12/Psicologia-no-Periodo-Pos-Parto_Servicos-Dra-Claudia-scaled-optimized.jpg" alt="Psicologia no período pós-parto" loading="lazy" />
+              <div>
+                <div class="label">04</div>
+                <h3>Psicologia no período pós-parto</h3>
+              </div>
+            </div>
+            <p>Suporte emocional após o parto, com foco em adaptação, vínculo e saúde mental materna.</p>
+          </article>
+
+          <article class="card service">
+            <div class="top">
+              <img src="https://www.claudiamadeirapereira.com/wp-content/uploads/2021/12/Psicologia-do-Desenvolvimento-Infantil_Servicos-scaled-optimized.jpg" alt="Psicologia do desenvolvimento infantil" loading="lazy" />
+              <div>
+                <div class="label">05</div>
+                <h3>Psicologia do desenvolvimento infantil</h3>
+              </div>
+            </div>
+            <p>Acompanhamento para compreender comportamentos, emoções e marcos do desenvolvimento da criança.</p>
+          </article>
+
+          <article class="card service">
+            <div class="top">
+              <img src="https://www.claudiamadeirapereira.com/wp-content/uploads/2021/12/Aconselhamento-Parental_Servicos-Dra-Claudia-scaled-optimized.jpg" alt="Aconselhamento parental" loading="lazy" />
+              <div>
+                <div class="label">06</div>
+                <h3>Aconselhamento parental</h3>
+              </div>
+            </div>
+            <p>Orientação prática para mães, pais e cuidadores em momentos de dúvida e transição familiar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="terapias">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">As minhas Psicoterapias</div>
+            <h2>Abordagens terapêuticas.</h2>
+          </div>
+          <p>Uma seleção clara das terapias para explicar melhor o método e reforçar autoridade clínica sem sobrecarregar a página.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card feature"><div class="icon">3G</div><h3>Psicoterapias Cognitivo-Comportamentais de 3ª Geração</h3><p>Terapias modernas que combinam evidência, aceitação, compaixão e mudança comportamental.</p></article>
+          <article class="card feature"><div class="icon">MB</div><h3>Mindfulness e redução de stress</h3><p>Estratégias para atenção plena, clareza mental e maior regulação emocional.</p></article>
+          <article class="card feature"><div class="icon">AC</div><h3>Aceitação e compromisso</h3><p>Trabalho orientado para agir com mais consistência mesmo diante de emoções difíceis.</p></article>
+        </div>
+        <div class="grid-2" style="margin-top:16px;">
+          <article class="card feature"><div class="icon">CC</div><h3>Terapia cognitivo-comportamental</h3><p>Identificação de padrões de pensamento e comportamento para criar respostas mais úteis no dia a dia.</p></article>
+          <article class="card feature"><div class="icon">CO</div><h3>Psicologia positiva e terapia integrativa</h3><p>Foco no fortalecimento de recursos internos, valores pessoais e bem-estar sustentado.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Dúvidas?</div>
+            <h2>Perguntas frequentes.</h2>
+          </div>
+          <p>Formato mais objetivo para acelerar decisão e reduzir dúvidas antes do contato.</p>
+        </div>
+        <div class="faq">
+          <div class="card faq-item">
+            <button type="button"><span>As consultas são online?</span><span class="chev">⌄</span></button>
+            <div class="answer">Sim. A página destaca consultas online, o que facilita continuidade, conforto e acesso em qualquer lugar.</div>
+          </div>
+          <div class="card faq-item">
+            <button type="button"><span>Atende adultos e crianças?</span><span class="chev">⌄</span></button>
+            <div class="answer">Sim. Há serviços específicos para adultos, crianças, adolescentes, gravidez, pós-parto e apoio parental.</div>
+          </div>
+          <div class="card faq-item">
+            <button type="button"><span>Quais abordagens terapêuticas usa?</span><span class="chev">⌄</span></button>
+            <div class="answer">TCC, terapias de 3ª geração, mindfulness, compaixão, aceitação e psicologia positiva.</div>
+          </div>
+          <div class="card faq-item">
+            <button type="button"><span>Como agendar?</span><span class="chev">⌄</span></button>
+            <div class="answer">O botão de agendamento leva para a página de contactos da profissional, onde o processo pode ser iniciado.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container quote-grid">
+        <article class="card quote-side">
+          <div class="label">Testemunhos</div>
+          <h2>Mais confiança, menos ruído.</h2>
+          <p>
+            A proposta deste redesign é transformar o site em uma presença digital mais clara, calma e forte — com navegação simples,
+            serviços organizados e um caminho direto para a consulta.
+          </p>
+          <p>
+            Isso ajuda tanto quem já conhece a profissional quanto quem está a descobrir o seu trabalho pela primeira vez.
+          </p>
+          <div class="hero-actions" style="margin-top: 12px;">
+            <a class="btn btn-primary" href="https://www.claudiamadeirapereira.com/contactos/" target="_blank" rel="noreferrer">Agendar consulta</a>
+            <a class="btn btn-secondary" href="https://www.claudiamadeirapereira.com/testemunhos/" target="_blank" rel="noreferrer">Ver testemunhos</a>
+          </div>
+        </article>
+        <div class="quote-photo">
+          <div class="quote-badge">Consultas online de psicologia clínica</div>
+          <div class="guide-panel" style="top:auto; right:auto; left:18px; bottom:18px; width:min(360px, calc(100% - 36px));">
+            <h3>Foco da comunicação</h3>
+            <ul class="guide-list">
+              <li><span class="guide-dot"></span><span>Serenidade, clareza e proximidade.</span></li>
+              <li><span class="guide-dot"></span><span>Objetividade no percurso terapêutico.</span></li>
+              <li><span class="guide-dot"></span><span>Experiência mais limpa e orientada para conversão.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contactos">
+      <div class="container contact">
+        <article class="card contact-card">
+          <div class="label">Contactos</div>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-top: 10px;">Vamos simplificar o primeiro passo.</h2>
+          <p style="color: var(--muted);">A página original já tinha presença forte em conteúdo. Aqui a ideia foi organizar tudo para facilitar a leitura e o agendamento.</p>
+          <div class="hero-actions" style="margin-top: 14px;">
+            <a class="btn btn-primary" href="mailto:psicologa@claudiamadeirapereira.com">Enviar e-mail</a>
+            <a class="btn btn-secondary" href="https://wa.me/351969487645" target="_blank" rel="noreferrer">WhatsApp</a>
+          </div>
+        </article>
+        <article class="card contact-card">
+          <div class="label">Redes sociais</div>
+          <h2 style="font-size: clamp(2rem, 4vw, 3rem); margin-top: 10px;">Presença digital.</h2>
+          <div class="socials">
+            <a href="https://www.facebook.com/claudiampereirapsicologa/" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/psic.claudiamadeirapereira/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.claudiamadeirapereira.com/blog/" target="_blank" rel="noreferrer">Blog</a>
+            <a href="https://www.claudiamadeirapereira.com/media/" target="_blank" rel="noreferrer">Media</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <a class="sticky-cta" href="https://www.claudiamadeirapereira.com/contactos/" target="_blank" rel="noreferrer">Agendar consulta</a>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>Dra. Cláudia Madeira Pereira</strong> — Psicologia Clínica e Psicoterapia.</div>
+      <div>Consultas online • Desenvolvimento pessoal • Psicoterapias 3G</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
+      window.open('https://www.claudiamadeirapereira.com/contactos/', '_blank', 'noopener');
+    });
+    document.querySelectorAll('.faq-item button').forEach((btn) => {
+      btn.addEventListener('click', () => btn.parentElement?.classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>
